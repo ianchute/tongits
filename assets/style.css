@@ -1,0 +1,142 @@
+body {
+  text-rendering: optimizeLegibility;
+  filter: brightness(1.2);
+  overflow: hidden;
+  background: url(bg.png);
+  font-family: cursive;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.row {
+  height: 19vh !important;
+}
+
+/*.enemy .row {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+
+.my .row {
+  background: rgba(0, 255, 0, 0.2);
+}
+
+.battleground.row {
+  background: rgba(0, 0, 0, 0.2);
+}*/
+
+.enemy .row .col-md-12 {
+  transform: rotate(180deg);
+}
+
+.suit:after {
+  transform: scale(0.75);
+  padding-top: 2.7vh;
+  margin-left: -0.4vh;
+}
+
+.rank {
+  font-size: x-small;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.playingCards {
+  margin-top: 1.2vh;
+}
+
+.card {
+  border: 0.1vh black solid !important;
+}
+
+.card:not(.back) {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.card:not(.back):hover {
+  opacity: 1;
+  -moz-box-shadow: .2em .2em .5em black;
+  -webkit-box-shadow: .2em .2em .5em black;
+  box-shadow: .2em .2em .5em black;
+  z-index: 1;
+}
+
+.playingCards.faceImages .card.rank-j {
+  background-position: -2.2em 0.4em;
+}
+
+.playingCards.faceImages .card.rank-q {
+  background-position: -2.3em 0.7em;
+}
+
+.playingCards.faceImages .card.rank-k {
+  background-position: -2.45em 0.4em;
+}
+
+.playingCards.faceImages .card.joker {
+  background-position: -2.2em 0.4em;
+}
+
+.card.rank-a.spades .suit:after,
+.card.rank-a.diams .suit:after {
+  /*right: 0.3em !important;*/
+  height: 0 !important;
+}
+
+.card.rank-a.hearts .suit:after,
+.card.rank-a.clubs .suit:after {
+  /*right: 0.2em !important;*/
+  height: 0 !important;
+}
+
+.card.rank-a .suit:after {
+  padding-left: 0.5vh;
+  padding-top: 3.1vh;
+  transform: translateY(-80%);
+}
+
+ul:after {
+  content: attr(data-length) ' card(s)';
+  position: fixed;
+  /*margin-top: 5vh;*/
+  font-weight: bold;
+  color: black;
+  font-size: x-small;
+  margin-left: 2vh;
+}
+
+ul.deck:after {
+  margin-top: -0.9vh;
+  margin-left: unset;
+}
+
+ul.deck > li:last-child {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+ul.deck > li:last-child:hover {
+  opacity: 1;
+}
+
+ul.deck > li:last-child:hover:after {
+  content: 'Draw card';
+  color: black;
+  font-size: x-small;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.enemy ul:after {
+  transform: rotate(180deg);
+}
